@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { chagneFilter, getFilter } from '../../redux/contacts/slice';
-
+import { filter } from 'redux/contacts/actions';
+import { getFilter } from 'redux/contacts/selectors';
 import { FilterStyled } from './Filter.styled';
 
 export const Filter = () => {
@@ -14,7 +14,7 @@ export const Filter = () => {
         name="filter"
         type="text"
         value={valueFilter}
-        onChange={e => dispatch(chagneFilter(e.currentTarget.value))}
+        onChange={e => dispatch(filter(e.currentTarget.value))}
       />
     </FilterStyled>
   );
